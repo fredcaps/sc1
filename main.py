@@ -8,6 +8,8 @@ import os
 from tools import collect_subdomains
 from results import filter_and_write_results
 from utils import print_message
+# Importer le module database
+import database
 
 def main():
     parser = argparse.ArgumentParser(description="Script de reconnaissance en mode passif")
@@ -39,6 +41,11 @@ def main():
 
     duration = time.time() - start_time
     print_message(f"Le script s'est terminé en {duration:.2f} secondes.", symbol="#")
+    print_message(f"Intégration des résultats dans la base de données", symbol="#")
+    print(f"Nom du fichier généré : {output_file}")
+    # Appeler la fonction pour insérer les résultats dans la base de données
+    database.insert_results_from_file(output_file)
+    print_message(f"L'intégration dans la base de données est terminée", symbol="#")
 
 if __name__ == "__main__":
     main()
