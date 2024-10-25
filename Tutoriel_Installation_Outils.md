@@ -79,11 +79,26 @@ sudo apt install amass -y
 
 ### 3.5. Installation d'Aquatone
 
-Pour capturer des captures d'écran des sous-domaines, installez Aquatone :
+Aquatone n’est pas disponible dans les dépôts classiques, installez-le manuellement avec les commandes suivantes :
 
-```bash
-sudo apt install aquatone -y
-```
+1. **Téléchargez Aquatone depuis le dépôt GitHub :**
+
+   ```bash
+   wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
+   ```
+
+2. **Décompressez le fichier téléchargé :**
+
+   ```bash
+   unzip aquatone_linux_amd64_1.7.0.zip
+   ```
+
+3. **Rendez le fichier exécutable et déplacez-le dans un répertoire accessible :**
+
+   ```bash
+   chmod +x aquatone
+   sudo mv aquatone /usr/local/bin/
+   ```
 
 ---
 
